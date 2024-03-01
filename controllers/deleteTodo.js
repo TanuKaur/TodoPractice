@@ -1,21 +1,19 @@
 const Todo = require("../models/Todo");
 
 //define route handler
-exports.createTodo = async(req,res) =>{
+exports.deleteTodo = async(req,res) =>{
 try{
+
+    const {id} = req.params;
+
+    await Todo.findByIdAndDelete(id);
+  
     
-//extract title and desc from request body
-const {title,description} = req.body;
-
-// create a new Todo obj and insert in DB
-const response = await Todo.create({title,description});
-
 // send a json response with a success flag
 res.status(200).json(
     {
-        succes:true,
-        data:response,
-        message:'Entry Created Successfully'
+        succes:true,       
+        message:'Todo Deleted'
     }
 );
 }

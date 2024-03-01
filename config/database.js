@@ -10,7 +10,7 @@ const dbConnect = ()=>{
     .catch((error)=>{
          console.log("Issue in Connection");
          console.log(error.message);
-          process.exit(1);
+         process.exit(1);
      }
 )
 }
