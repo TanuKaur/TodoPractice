@@ -13,7 +13,7 @@ try{
 res.status(200).json(
     {
         succes:true,       
-        message:'Todo Deleted'
+        message:'Todo has been Deleted'
     }
 );
 }
